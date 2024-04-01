@@ -22,8 +22,8 @@
         <div class="row m-2">
           <div class="col-sm-6">
             <div class="input-group">
-              <span class="input-group-text col-5" id="basic-addon1">Date de commande</span>
-              <input type="date" class="form-control col-7"[(ngModel)]="bonCommande.dateCommande" aria-label="DateCommande" aria-describedby="basic-addon1">
+              <span class="input-group-text col-5" id="basic-addon1">Exploitation</span>
+              <input type="text" class="form-control col-7" aria-label="exploitation" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-sm-6">
@@ -37,8 +37,10 @@
         <div class="row m-2">
           <div class="col-sm-6">
             <div class="input-group">
-              <span class="input-group-text col-5" id="basic-addon1">Date de livraison</span>
-              <input type="date" class="form-control col-7" aria-label="dateLivraison" [(ngModel)]="bonCommande.dateLivraison" aria-describedby="basic-addon1" >
+              <span class="input-group-text col-5" id="basic-addon1">Centre Revenu</span>
+              <select name="loginCR" id="loginCR"  class="form-select form-select-sm" [required]="true">
+                <option [ngValue]="line.id" *ngFor="let line of centreRevenus" >{{line.libelle}}</option>
+              </select>
             </div>
           </div>
           <div class="col-sm-6">

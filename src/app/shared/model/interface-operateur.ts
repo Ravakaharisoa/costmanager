@@ -1,3 +1,5 @@
+import { InterfaceAdresse } from './interface-adresse';
+
 export interface InterfaceOperateur {
     id?: number;
     nom: string;
@@ -13,3 +15,7 @@ export interface InterfaceOperateur {
     exploitationId: number;
     centreId: number;
 }
+
+// export interface InterfaceOperateur{
+//     operateurs:InterfaceOperateur[];
+// }

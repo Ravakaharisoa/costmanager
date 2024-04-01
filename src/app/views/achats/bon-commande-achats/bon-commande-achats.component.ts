@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { FormGroup, FormsModule } from '@angular/forms';
 import { InterfaceBonCommande } from '../../../shared/model/interface-bonCommande';
 
+import { Centrerevenu } from '../../../shared/model/centrerevenu';
+import { InterfaceCentreRevenu } from 'src/app/shared/model/interface-centrerevenu';
+
 @Component({
   selector: 'app-bon-commande-achats',
   standalone: true,
@@ -32,6 +35,9 @@ export class BonCommandeAchatsComponent implements OnInit {
   public commandes: any;
 
   public bonCommande: InterfaceBonCommande;
+  public centreRevenus: Centrerevenu;
+  public centreRevenu: InterfaceCentreRevenu;
+  public operateurId = sessionStorage.getItem('id');
 
   toggleModal() {
     this.toggle = !this.toggle;
@@ -96,7 +102,7 @@ export class BonCommandeAchatsComponent implements OnInit {
     this.toggleModal();
   }
 
-  addBonCommande(bonCommande:any){
+  addBonCommande(bonCommande?:any){
     this.commandeService.createBonCommande(bonCommande);
   }
   
